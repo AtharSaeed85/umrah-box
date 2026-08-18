@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umrah Saving Box | آپ کی مقدس سفر کی پہلی سیڑھی</title>
+
+<!-- Jameel Noori Nastaliq Font -->
+<style>
+@import url('https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq');
+
+:root{
+    --gold: #c99b45;
+    --gold-light: #f0d58a;
+    --black: #090909;
+    --cream: #fffaf0;
+    --white: #ffffff;
+    --text: #171717;
+    --red: #e63946;
+    --green: #25D366;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+    font-family: 'Jameel Noori Nastaleeq', 'Gulzar', 'Nafees Nastaleeq', 'Segoe UI', sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.9;
+    text-align: right;
+}
+
+@keyframes pulse { 0%{transform:scale(1);} 50%{transform:scale(1.04);} 100%{transform:scale(1);} }
+@keyframes glow { 0%{box-shadow:0 0 5px rgba(201,155,69,0.4);} 50%{box-shadow:0 0 20px rgba(201,155,69,0.8);} 100%{box-shadow:0 0 5px rgba(201,155,69,0.4);} }
+@keyframes blink { 0%{opacity:1;} 50%{opacity:0.3;} 100%{opacity:1;} }
+
+.animate-pulse { animation: pulse 2s infinite; }
+.container{ width:min(1120px,92%); margin:auto; }
+
+/* Hype Bar */
+.hype-bar {
+    background: #111; color: #fff; padding: 10px 15px; text-align: center;
+    font-size: 16px; border-bottom: 2px solid var(--gold);
+    display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;
+}
+.live-dot { height: 12px; width: 12px; background-color: #ff4d4d; border-radius: 50%; display: inline-block; animation: blink 1s infinite; }
+.stock-warning { color: #ffda79; font-weight: bold; background: rgba(230, 57, 70, 0.2); padding: 4px 12px; border-radius: 20px; border: 1px solid var(--red); }
+
+/* Hero Section */
+.hero{
+    background: radial-gradient(circle at 80% 15%,rgba(201,155,69,.25),transparent 35%), linear-gradient(135deg,#070707,#1a150d);
+    color:white; padding:50px 20px 65px; text-align: center;
+}
+.badge{ display:inline-block; padding:8px 20px; border:1px solid rgba(240,213,138,.5); border-radius:50px; color:var(--gold-light); font-size:16px; font-weight:bold; margin-bottom:20px; }
+.hero h1{ font-size:clamp(30px,5vw,52px); line-height:1.4; margin-bottom:20px; font-weight:900; }
+.gold{ color:var(--gold-light); }
+.hero-text{ color:#ddd; font-size:20px; max-width: 750px; margin: 0 auto 28px; line-height: 2.1; }
+
+.media-container { margin: 30px auto; max-width: 600px; border-radius: 20px; overflow: hidden; animation: glow 3s infinite; border: 2px solid var(--gold); }
+.media-container img, .media-container video { width: 100%; display: block; }
+
+.cta-btn{ display:inline-block; padding:16px 36px; border-radius:10px; background:linear-gradient(135deg,#c99b45,#f0d58a); color:#17120a; font-size:20px; font-weight:800; text-decoration:none; border:none; margin-top: 15px; }
+
+/* Checkout Section */
+.checkout-section { background: var(--cream); padding: 60px 20px; }
+.form-card { background: white; max-width: 750px; margin: 30px auto 0; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid var(--gold); }
+.section-title { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 5px; margin: 25px 0 15px; font-size: 22px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+@media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+
+.form-group { margin-bottom: 15px; text-align: right; }
+.form-group.full-width { grid-column: span 2; }
+@media (max-width: 600px) { .form-group.full-width { grid-column: span 1; } }
+
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 17px; }
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 11px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; font-family: inherit; text-align: right;
+}
+
+.order-summary { background: #fdfbf7; border: 1px dashed var(--gold); padding: 15px; border-radius: 8px; margin: 20px 0; }
+.summary-row { display: flex; justify-content: space-between; font-size: 18px; margin-bottom: 8px; }
+
+.submit-btn {
+    width: 100%; padding: 16px; background: #25D366; color: white; font-size: 22px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; transition: 0.3s;
+}
+.submit-btn:hover { background: #1eb755; }
+</style>
+</head>
+<body>
+
+<!-- HYPE BAR -->
+<div class="hype-bar">
+    <div><span class="live-dot"></span> <span id="live-views">147</span> لوگ اس وقت اس پروڈکٹ کو دیکھ رہے ہیں</div>
+    <div class="stock-warning">🔥 صرف <span id="stock-count">9</span> پیس باقی رہ گئے ہیں! جلدی کریں</div>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+        <div class="badge">🕋 BLESSED SAVING JOURNEY</div>
+        <h1>عمرہ کا مقدس خواب... <br><span class="gold">اب سچ ہوگا انشاءاللہ</span></h1>
+        
+        <p class="hero-text">
+            دل میں خانہ کعبہ اور روضہ رسول ﷺ کی زیارت کی تڑپ ہے؟  
+            صرف سوچیں نہیں، آج سے ایک پاک نیت اور چھوٹی بچت کا آغاز کریں۔  
+            یہ باکس آپ کو ہر روز آپ کے مقدس ترین سفر کی یاد دلائے گا۔
+        </p>
+
+        <div class="media-container">
+            <img src="product.jpg" alt="Umrah Saving Box">
+        </div>
+
+        <h2 style="color:var(--gold-light); margin-bottom:10px; font-size:28px;">قیمت: صرف 999 روپے</h2>
+        <a href="#order-form" class="cta-btn animate-pulse">🕋 ابھی آرڈر کریں (Cash On Delivery)</a>
+    </div>
+</section>
+
+<!-- DETAILED CHECKOUT FORM SECTION -->
+<section class="checkout-section" id="order-form">
+    <div class="container" style="text-align: center;">
+        <h2 style="font-size:32px;">اپنا مکمل ڈیلیوری فارم پر کریں</h2>
+        <p style="font-size:18px;">پارسل ملنے پر رقم ادا کریں۔ (Cash On Delivery Available)</p>
+
+        <div class="form-card">
+            <form id="checkoutForm">
+                
+                <!-- CUSTOMER INFORMATION -->
+                <div class="section-title">👤 Customer Information (شخصی معلومات)</div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>مکمل نام (Full Name) *</label>
+                        <input type="text" id="fullName" placeholder="مثال: محمد علی" required>
+                    </div>
+                    <div class="form-group">
+                        <label>پرائمری فون نمبر (Primary Phone) *</label>
+                        <input type="tel" id="phone1" placeholder="03001234567" required>
+                    </div>
+                    <div class="form-group">
+                        <label>دوسرا نمبر (Secondary Phone)</label>
+                        <input type="tel" id="phone2" placeholder="03121234567 (اختیاری)">
+                    </div>
+                    <div class="form-group">
+                        <label>واٹس ایپ نمبر (WhatsApp Number) *</label>
+                        <input type="tel" id="whatsapp" placeholder="03001234567" required>
+                    </div>
+                </div>
+
+                <!-- DELIVERY ADDRESS -->
+                <div class="section-title">🏠 Complete Delivery Address (مکمل پتہ)</div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>مکان / فلیٹ نمبر (House / Flat No.) *</label>
+                        <input type="text" id="houseNo" placeholder="House 12 / Flat 3B" required>
+                    </div>
+                    <div class="form-group">
+                        <label>گلی نمبر (Street No.)</label>
+                        <input type="text" id="streetNo" placeholder="Street 4">
+                    </div>
+                    <div class="form-group">
+                        <label>روڈ کا نام (Street / Road Name)</label>
+                        <input type="text" id="streetName" placeholder="Main Boulevard / Canal Road">
+                    </div>
+                    <div class="form-group">
+                        <label>مٹھی / مشہور جگہ (Near / Landmark) *</label>
+                        <input type="text" id="landmark" placeholder="Near Jamia Masjid / Central Hospital" required>
+                    </div>
+                    <div class="form-group">
+                        <label>محلہ / علاقہ (Mohalla / Area) *</label>
+                        <input type="text" id="mohalla" placeholder="Mohalla Islam Nagar" required>
+                    </div>
+                    <div class="form-group">
+                        <label>ٹاؤن / سوسائٹی (Town / Society)</label>
+                        <input type="text" id="society" placeholder="ABC Town / XYZ Society">
+                    </div>
+                    <div class="form-group">
+                        <label>شہر (City) *</label>
+                        <input type="text" id="city" placeholder="Gujranwala, Lahore, etc." required>
+                    </div>
+                    <div class="form-group">
+                        <label>صوبہ (Province) *</label>
+                        <select id="province" required>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Sindh">Sindh</option>
+                            <option value="KPK">KPK</option>
+                            <option value="Balochistan">Balochistan</option>
+                            <option value="Islamabad">Islamabad</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>پوسٹل کوڈ (Postal Code)</label>
+                        <input type="text" id="postalCode" placeholder="52250">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>اضافی ہدایات (Additional Instructions)</label>
+                        <textarea id="notes" rows="2" placeholder="کال کر کے آئیں یا کسی خاص وقت پر ڈیلیور کریں"></textarea>
+                    </div>
+                </div>
+
+                <!-- ORDER INFORMATION -->
+                <div class="section-title">📦 Order Summary (آرڈر کی تفصیل)</div>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>تعداد (Quantity) *</label>
+                        <select id="quantity" onchange="calculateTotal()">
+                            <option value="1">1 x Umrah Saving Box (Rs. 999)</option>
+                            <option value="2">2 x Umrah Saving Box (Rs. 1,998)</option>
+                            <option value="3">3 x Umrah Saving Box (Rs. 2,997)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-row"><span>پروڈکٹ کی قیمت:</span><span>Rs. <span id="subtotal">999</span></span></div>
+                    <div class="summary-row"><span>ڈیلیوری چارجز:</span><span>Rs. 200</span></div>
+                    <hr style="margin: 10px 0; border: 0.5px solid #ccc;">
+                    <div class="summary-row" style="font-weight: bold; color: var(--red); font-size: 22px;">
+                        <span>کل رقم (Total Amount):</span><span>Rs. <span id="grandTotal">1,199</span></span>
+                    </div>
+                    <p style="text-align: right; color: #666; font-size: 14px; margin-top: 5px;">طریقہ ادائیگی: Cash on Delivery</p>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">✅ آرڈر کنفرم کریں (Cash On Delivery)</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    // GOOGLE APPS SCRIPT WEB APP URL (CONNECTED & ACTIVATED)
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwTlDM8meN-U1Qzt07xEQya-GDk0A65ak9VVBZsInk-rR2LGK0rRuHlhkIYDAsQm7QAZg/exec";
+    const MY_WHATSAPP_NUMBER = "923128191800"; // Configured WhatsApp Number
+
+    function calculateTotal() {
+        const qty = parseInt(document.getElementById('quantity').value);
+        const subtotal = qty * 999;
+        const total = subtotal + 200;
+        document.getElementById('subtotal').innerText = subtotal.toLocaleString();
+        document.getElementById('grandTotal').innerText = total.toLocaleString();
+    }
+
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.innerText = "⏳ آرڈر بک ہو رہا ہے...";
+
+        const qty = document.getElementById('quantity').value;
+        const totalAmt = (parseInt(qty) * 999) + 200;
+
+        const formData = {
+            fullName: document.getElementById('fullName').value,
+            phone1: document.getElementById('phone1').value,
+            phone2: document.getElementById('phone2').value,
+            whatsapp: document.getElementById('whatsapp').value,
+            houseNo: document.getElementById('houseNo').value,
+            streetNo: document.getElementById('streetNo').value,
+            streetName: document.getElementById('streetName').value,
+            landmark: document.getElementById('landmark').value,
+            mohalla: document.getElementById('mohalla').value,
+            society: document.getElementById('society').value,
+            city: document.getElementById('city').value,
+            province: document.getElementById('province').value,
+            postalCode: document.getElementById('postalCode').value,
+            notes: document.getElementById('notes').value,
+            quantity: qty
+        };
+
+        // 1. Submit Data to Google Sheets
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        .then(response => {
+            const orderId = response.orderId || "USB-" + Date.now();
+            
+            // 2. Format WhatsApp Message
+            let waMessage = `🕋 *NEW UMRAH SAVING BOX ORDER*\n`;
+            waMessage += `Order ID: *${orderId}*\n`;
+            waMessage += `Name: *${formData.fullName}*\n\n`;
+            waMessage += `Phone: ${formData.phone1}\n`;
+            waMessage += `WhatsApp: ${formData.whatsapp}\n\n`;
+            waMessage += `Address:\n`;
+            waMessage += `${response.fullAddress}\n\n`;
+            waMessage += `Product: Umrah Saving Box\n`;
+            waMessage += `Quantity: ${formData.quantity}\n`;
+            waMessage += `Price: Rs. ${formData.quantity * 999}\n`;
+            waMessage += `Delivery: Rs. 200\n`;
+            waMessage += `*Total: Rs. ${totalAmt.toLocaleString()}*\n`;
+            waMessage += `Payment: Cash on Delivery`;
+
+            // 3. Redirect to WhatsApp
+            const waUrl = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+            window.location.href = waUrl;
+        })
+        .catch(err => {
+            alert("Order Submit Karne Me Masla Aaya. Dobara Koshish Karein.");
+            btn.disabled = false;
+            btn.innerText = "✅ آرڈر کنفرم کریں (Cash On Delivery)";
+        });
+    });
+
+    // Live Views Updater
+    setInterval(() => {
+        const el = document.getElementById('live-views');
+        if(el) {
+            let views = parseInt(el.innerText) + Math.floor(Math.random() * 7) - 3;
+            el.innerText = views < 120 ? 125 : (views > 190 ? 182 : views);
+        }
+    }, 3500);
+
+    // Stock Counter
+    setInterval(() => {
+        const el = document.getElementById('stock-count');
+        if(el && parseInt(el.innerText) > 3 && Math.random() > 0.6) {
+            el.innerText = parseInt(el.innerText) - 1;
+        }
+    }, 12000);
+</script>
+
+</body>
+</html>
