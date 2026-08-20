@@ -5,16 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Umrah Saving Box | آپ کی مقدس سفر کی پہلی سیڑھی</title>
 
-body {
-    font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', sans-serif;
-    color: var(--text);
-    background: #fff;
-    line-height: 2.4;
-    font-size: 18px;
-    text-align: right;
-    overflow-x: hidden;
-}
+<!-- Jameel Noori Nastaleeq Font Load -->
 <style>
+@font-face {
+    font-family: 'Jameel Noori Nastaleeq';
+    src: url('https://cdn.jsdelivr.net/gh/mneam/urdu-fonts@main/JameelNooriNastaleeq/JameelNooriNastaleeq.woff2') format('woff2');
+    font-display: swap;
+}
+
 :root {
     --gold: #c99b45;
     --gold-light: #f0d58a;
@@ -30,10 +28,11 @@ body {
 html { scroll-behavior:smooth; }
 
 body {
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Segoe UI', sans-serif;
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', sans-serif;
     color: var(--text);
     background: #fff;
-    line-height: 2.2;
+    line-height: 2.4;
+    font-size: 18px;
     text-align: right;
     overflow-x: hidden;
 }
@@ -81,7 +80,20 @@ body {
     object-fit: cover;
 }
 
-.cta-btn { display:inline-block; padding:14px 28px; border-radius:10px; background:linear-gradient(135deg,#c99b45,#f0d58a); color:#17120a; font-size:20px; font-weight:800; text-decoration:none; border:none; margin-top: 15px; cursor: pointer; }
+.cta-btn { 
+    display:inline-block; 
+    padding:14px 28px; 
+    border-radius:10px; 
+    background:linear-gradient(135deg,#c99b45,#f0d58a); 
+    color:#17120a; 
+    font-size:20px; 
+    font-weight:bold; 
+    font-family: Arial, sans-serif;
+    text-decoration:none; 
+    border:none; 
+    margin-top: 15px; 
+    cursor: pointer; 
+}
 
 /* BUNDLE OFFER CLICKABLE CARDS */
 .offer-banner-container {
@@ -159,9 +171,32 @@ body {
 .summary-row { display: flex; justify-content: space-between; font-size: 17px; margin-bottom: 8px; align-items: center; }
 
 .submit-btn {
-    width: 100%; padding: 15px; background: #25D366; color: white; font-size: 22px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; transition: 0.3s;
+    width: 100%; 
+    padding: 16px; 
+    background: #25D366; 
+    color: white; 
+    font-size: 22px; 
+    font-weight: bold; 
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: 0.3s;
 }
 .submit-btn:hover { background: #1eb755; }
+
+.trust-badge {
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+    margin-top: 12px;
+    font-weight: bold;
+    background: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px dashed #bbb;
+}
 
 /* Floating WhatsApp Button Style */
 .whatsapp-float {
@@ -190,6 +225,7 @@ body {
     .cta-btn { width: 100%; font-size: 18px; padding: 12px 15px; }
     .form-card { padding: 18px 12px; }
     .summary-row { font-size: 15px; }
+    .submit-btn { font-size: 20px; padding: 14px; }
 }
 </style>
 </head>
@@ -221,7 +257,7 @@ body {
         </div>
 
         <h2 style="color:var(--gold-light); margin-bottom:10px; font-size:28px;">قیمت: صرف 999 روپے</h2>
-        <a href="#order-form" class="cta-btn animate-pulse">🕋 ابھی آرڈر کریں (Cash On Delivery)</a>
+        <a href="#order-form" class="cta-btn animate-pulse">ORDER NOW</a>
     </div>
 </section>
 
@@ -335,7 +371,8 @@ body {
                     </div>
                 </div>
 
-                <button type="submit" class="submit-btn" id="submitBtn">✅ آرڈر کنفرم کریں (Cash On Delivery)</button>
+                <button type="submit" class="submit-btn" id="submitBtn">ORDER NOW</button>
+                <div class="trust-badge">💵 Cash On Delivery | 🚚 پورے پاکستان میں باحفاظت ترسیل</div>
             </form>
         </div>
     </div>
@@ -399,7 +436,7 @@ body {
         
         const btn = document.getElementById('submitBtn');
         btn.disabled = true;
-        btn.innerText = "⏳ آرڈر بک ہو رہا ہے...";
+        btn.innerText = "PROCESSING ORDER...";
 
         const qty = parseInt(document.getElementById('quantity').value);
         let baseSubtotal = qty * 999;
@@ -445,7 +482,7 @@ body {
         .catch(err => {
             alert("Order Submit Karne Me Masla Aaya. Dobara Koshish Karein.");
             btn.disabled = false;
-            btn.innerText = "✅ آرڈر کنفرم کریں (Cash On Delivery)";
+            btn.innerText = "ORDER NOW";
         });
     });
 </script>
