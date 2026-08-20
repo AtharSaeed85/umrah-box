@@ -95,7 +95,7 @@ body {
     cursor: pointer; 
 }
 
-/* BUNDLE OFFER CLICKABLE CARDS */
+/* BUNDLE OFFER CARDS */
 .offer-banner-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -152,7 +152,7 @@ body {
 .target-box { background: rgba(201,155,69,0.15); border: 2px dashed var(--gold); padding: 20px; border-radius: 15px; max-width: 700px; margin: 20px auto; }
 .target-amount { font-size: 38px; font-weight: bold; color: var(--gold-light); direction: ltr; }
 
-/* 3D EMOTIONAL REVIEWS SECTION */
+/* REVIEWS SECTION */
 .reviews-section {
     background: radial-gradient(circle at 50% 50%, #1a150d 0%, #070707 100%);
     padding: 60px 15px;
@@ -270,7 +270,7 @@ body {
     border: 1px dashed #bbb;
 }
 
-/* Floating WhatsApp Button Style */
+/* Floating WhatsApp Button */
 .whatsapp-float {
     position: fixed;
     width: 55px;
@@ -288,7 +288,7 @@ body {
     justify-content: center;
 }
 
-/* Mobile Responsive Adjustments */
+/* Mobile Responsive */
 @media (max-width: 600px) {
     .form-grid { grid-template-columns: 1fr; }
     .form-group.full-width { grid-column: span 1; }
@@ -320,10 +320,10 @@ body {
             صرف سوچیں نہیں، آج سے ایک پاک نیت اور چھوٹی بچت کا آغاز کریں۔
         </p>
 
-        <!-- MOBILE COMPATIBLE VIDEO CONTAINER -->
+        <!-- MOBILE OPTIMIZED VIDEO CONTAINER -->
         <div class="media-container">
             <video autoplay loop muted playsinline webkit-playsinline preload="auto">
-                <source src="umrah Saving Box.mp4" type="video/mp4">
+                <source src="umrah-saving-box.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -345,7 +345,7 @@ body {
     </div>
 </section>
 
-<!-- EMOTIONAL 3D REVIEWS SECTION -->
+<!-- REVIEWS SECTION -->
 <section class="reviews-section">
     <div class="container">
         <div class="badge">❤️ خلوص دل سے دیے گئے تاثرات</div>
@@ -413,7 +413,7 @@ body {
     <div class="container" style="text-align: center;">
         <h2 style="font-size:30px; color:var(--black);">اپنا مکمل ڈیلیوری فارم پر کریں</h2>
 
-        <!-- BUNDLE CARDS WITH PROPER MOBILE DIRECTION -->
+        <!-- BUNDLE CARDS -->
         <div class="offer-banner-container">
             <div class="offer-card active" id="card-1" onclick="selectBundle(1)">
                 <div class="eng-text" style="font-weight:bold; font-size:18px;">1 x Saving Box</div>
@@ -524,24 +524,30 @@ body {
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwTlDM8meN-U1Qzt07xEQya-GDk0A65ak9VVBZsInk-rR2LGK0rRuHlhkIYDAsQm7QAZg/exec";
     const MY_WHATSAPP_NUMBER = "923128191800";
 
-    // Auto-play video force fix for iOS & Android
+    // Enhanced Mobile Autoplay Handling
     document.addEventListener("DOMContentLoaded", function() {
         const video = document.querySelector(".media-container video");
         if (video) {
             video.muted = true;
-            video.play().catch(error => {
-                console.log("Autoplay was prevented, retrying...", error);
-            });
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay blocked, enabling tap to play listener", error);
+                    document.body.addEventListener('touchstart', function() {
+                        video.play();
+                    }, { once: true });
+                });
+            }
         }
     });
 
-    // Card Click Function
+    // Bundle Select Card Click Function
     function selectBundle(qty) {
         document.getElementById('quantity').value = qty;
         calculateTotal();
     }
 
-    // Dynamic Price & Card Active State Calculation
+    // Calculation Engine
     function calculateTotal() {
         const qty = parseInt(document.getElementById('quantity').value);
         let baseSubtotal = qty * 999;
@@ -565,7 +571,7 @@ body {
         if (activeCard) activeCard.classList.add('active');
     }
 
-    // Form Submission
+    // Checkout Form Handler
     document.getElementById('checkoutForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
