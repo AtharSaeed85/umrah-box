@@ -2,7 +2,7 @@
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Umrah Saving Box | آپ کی مقدس سفر کی پہلی سیڑھی</title>
 
 <!-- Noto Nastaliq Urdu (Google Fonts - Fast & Reliable) -->
@@ -31,6 +31,7 @@ body {
     background: #fff;
     line-height: 2.2;
     text-align: right;
+    overflow-x: hidden;
 }
 
 @keyframes pulse { 0%{transform:scale(1);} 50%{transform:scale(1.04);} 100%{transform:scale(1);} }
@@ -43,31 +44,45 @@ body {
 /* Hype Bar */
 .hype-bar {
     background: #111; color: #fff; padding: 10px 15px; text-align: center;
-    font-size: 16px; border-bottom: 2px solid var(--gold);
-    display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;
+    font-size: 15px; border-bottom: 2px solid var(--gold);
+    display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;
 }
-.live-dot { height: 12px; width: 12px; background-color: #ff4d4d; border-radius: 50%; display: inline-block; animation: blink 1s infinite; }
-.stock-warning { color: #ffda79; font-weight: bold; background: rgba(230, 57, 70, 0.2); padding: 4px 12px; border-radius: 20px; border: 1px solid var(--red); }
+.live-dot { height: 10px; width: 10px; background-color: #ff4d4d; border-radius: 50%; display: inline-block; animation: blink 1s infinite; }
+.stock-warning { color: #ffda79; font-weight: bold; background: rgba(230, 57, 70, 0.2); padding: 2px 10px; border-radius: 20px; border: 1px solid var(--red); }
 
 /* Hero Section */
 .hero {
     background: radial-gradient(circle at 80% 15%,rgba(201,155,69,.25),transparent 35%), linear-gradient(135deg,#070707,#1a150d);
-    color:white; padding:50px 20px 65px; text-align: center;
+    color:white; padding:40px 15px 50px; text-align: center;
 }
-.badge { display:inline-block; padding:8px 20px; border:1px solid rgba(240,213,138,.5); border-radius:50px; color:var(--gold-light); font-size:16px; font-weight:bold; margin-bottom:20px; }
-.hero h1 { font-size:clamp(30px,5vw,52px); line-height:1.6; margin-bottom:20px; font-weight:900; }
+.badge { display:inline-block; padding:6px 16px; border:1px solid rgba(240,213,138,.5); border-radius:50px; color:var(--gold-light); font-size:14px; font-weight:bold; margin-bottom:15px; }
+.hero h1 { font-size:clamp(26px,5vw,52px); line-height:1.7; margin-bottom:15px; font-weight:900; }
 .gold { color:var(--gold-light); }
-.hero-text { color:#ddd; font-size:20px; max-width: 750px; margin: 0 auto 28px; line-height: 2.2; }
+.hero-text { color:#ddd; font-size:18px; max-width: 750px; margin: 0 auto 20px; line-height: 2.1; }
 
-.media-container { margin: 30px auto; max-width: 600px; border-radius: 20px; overflow: hidden; animation: glow 3s infinite; border: 2px solid var(--gold); }
-.media-container img { width: 100%; display: block; }
+.media-container { 
+    margin: 20px auto; 
+    max-width: 550px; 
+    width: 100%;
+    border-radius: 15px; 
+    overflow: hidden; 
+    animation: glow 3s infinite; 
+    border: 2px solid var(--gold);
+    background: #000;
+}
+.media-container video { 
+    width: 100%; 
+    height: auto;
+    display: block; 
+    object-fit: cover;
+}
 
-.cta-btn { display:inline-block; padding:16px 36px; border-radius:10px; background:linear-gradient(135deg,#c99b45,#f0d58a); color:#17120a; font-size:22px; font-weight:800; text-decoration:none; border:none; margin-top: 15px; cursor: pointer; }
+.cta-btn { display:inline-block; padding:14px 28px; border-radius:10px; background:linear-gradient(135deg,#c99b45,#f0d58a); color:#17120a; font-size:20px; font-weight:800; text-decoration:none; border:none; margin-top: 15px; cursor: pointer; }
 
 /* BUNDLE OFFER CLICKABLE CARDS */
 .offer-banner-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     margin: 25px 0;
     text-align: center;
@@ -76,7 +91,7 @@ body {
     background: #fff;
     border: 2px solid #ddd;
     border-radius: 12px;
-    padding: 20px 15px;
+    padding: 20px 10px;
     position: relative;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     cursor: pointer;
@@ -92,7 +107,6 @@ body {
     border: 3px solid var(--red) !important;
     background: #fffdf5 !important;
     box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
-    transform: scale(1.02);
 }
 .offer-tag {
     position: absolute;
@@ -101,57 +115,57 @@ body {
     transform: translateX(-50%);
     background: #e63946;
     color: white;
-    padding: 2px 12px;
-    font-size: 13px;
+    padding: 2px 10px;
+    font-size: 12px;
     font-weight: bold;
     border-radius: 20px;
     white-space: nowrap;
+    direction: ltr;
+    unicode-bidi: embed;
 }
 
-/* Features Grid Section */
-.features-section { padding: 60px 20px; background: #fff; text-align: center; }
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-.feature-card { background: var(--cream); border: 1px solid var(--gold); padding: 25px; border-radius: 12px; text-align: center; }
-.feature-icon { font-size: 40px; margin-bottom: 10px; display: block; }
-.feature-title { font-size: 22px; font-weight: bold; color: var(--gold); margin-bottom: 8px; }
+.eng-text {
+    direction: ltr;
+    display: block;
+    text-align: center;
+    unicode-bidi: embed;
+}
 
 /* Video & Target Section */
-.hype-section { background: #111; color: white; padding: 60px 20px; text-align: center; }
-.target-box { background: rgba(201,155,69,0.15); border: 2px dashed var(--gold); padding: 25px; border-radius: 15px; max-width: 700px; margin: 20px auto; }
-.target-amount { font-size: 45px; font-weight: bold; color: var(--gold-light); }
+.hype-section { background: #111; color: white; padding: 50px 15px; text-align: center; }
+.target-box { background: rgba(201,155,69,0.15); border: 2px dashed var(--gold); padding: 20px; border-radius: 15px; max-width: 700px; margin: 20px auto; }
+.target-amount { font-size: 38px; font-weight: bold; color: var(--gold-light); direction: ltr; }
 
 /* Checkout Section */
-.checkout-section { background: var(--cream); padding: 60px 20px; border-top: 2px solid var(--gold); }
-.form-card { background: white; max-width: 750px; margin: 30px auto 0; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid var(--gold); }
-.section-title { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 5px; margin: 25px 0 15px; font-size: 22px; }
+.checkout-section { background: var(--cream); padding: 50px 15px; border-top: 2px solid var(--gold); }
+.form-card { background: white; max-width: 750px; margin: 20px auto 0; padding: 25px 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid var(--gold); }
+.section-title { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 5px; margin: 20px 0 15px; font-size: 20px; }
 
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-@media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
 
 .form-group { margin-bottom: 15px; text-align: right; }
 .form-group.full-width { grid-column: span 2; }
-@media (max-width: 600px) { .form-group.full-width { grid-column: span 1; } }
 
-.form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 17px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 16px; }
 .form-group input, .form-group textarea, .form-group select {
-    width: 100%; padding: 11px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; font-family: inherit; text-align: right;
+    width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; font-family: inherit; text-align: right;
 }
 
 .order-summary { background: #fdfbf7; border: 1px dashed var(--gold); padding: 15px; border-radius: 8px; margin: 20px 0; }
-.summary-row { display: flex; justify-content: space-between; font-size: 18px; margin-bottom: 8px; }
+.summary-row { display: flex; justify-content: space-between; font-size: 17px; margin-bottom: 8px; align-items: center; }
 
 .submit-btn {
-    width: 100%; padding: 16px; background: #25D366; color: white; font-size: 24px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; transition: 0.3s;
+    width: 100%; padding: 15px; background: #25D366; color: white; font-size: 22px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; transition: 0.3s;
 }
 .submit-btn:hover { background: #1eb755; }
 
 /* Floating WhatsApp Button Style */
 .whatsapp-float {
     position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
     background-color: #25d366;
     color: #FFF;
     border-radius: 50px;
@@ -161,11 +175,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
+/* Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full-width { grid-column: span 1; }
+    .offer-banner-container { grid-template-columns: 1fr; gap: 20px; }
+    .hero { padding: 30px 10px 40px; }
+    .cta-btn { width: 100%; font-size: 18px; padding: 12px 15px; }
+    .form-card { padding: 18px 12px; }
+    .summary-row { font-size: 15px; }
 }
 </style>
 </head>
@@ -188,14 +208,15 @@ body {
             صرف سوچیں نہیں، آج سے ایک پاک نیت اور چھوٹی بچت کا آغاز کریں۔
         </p>
 
+        <!-- MOBILE COMPATIBLE VIDEO CONTAINER -->
         <div class="media-container">
-            <video width="100%" autoplay loop muted playsinline style="border-radius:15px; display:block;">
+            <video autoplay loop muted playsinline webkit-playsinline preload="auto">
                 <source src="umrah Saving Box.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
 
-        <h2 style="color:var(--gold-light); margin-bottom:10px; font-size:32px;">قیمت: صرف 999 روپے</h2>
+        <h2 style="color:var(--gold-light); margin-bottom:10px; font-size:28px;">قیمت: صرف 999 روپے</h2>
         <a href="#order-form" class="cta-btn animate-pulse">🕋 ابھی آرڈر کریں (Cash On Delivery)</a>
     </div>
 </section>
@@ -203,11 +224,11 @@ body {
 <!-- TARGET AMOUNT SECTION -->
 <section class="hype-section">
     <div class="container">
-        <h2 style="font-size:32px; color:var(--gold-light);">🎯 بچت کا ہدف (Saving Target)</h2>
+        <h2 style="font-size:28px; color:var(--gold-light);">🎯 بچت کا ہدف (Saving Target)</h2>
         <div class="target-box">
-            <div style="font-size:22px; color:#fff;">کل بچت ہدف (Total Target):</div>
+            <div style="font-size:20px; color:#fff;">کل بچت ہدف (Total Target):</div>
             <div class="target-amount">Rs. 210,000</div>
-            <p style="font-size:18px; color:#ddd; margin-top:10px;">✔ مارکر کے ساتھ باکس پر دیے گئے خانوں کو فل کرتے جائیں!</p>
+            <p style="font-size:16px; color:#ddd; margin-top:10px;">✔ مارکر کے ساتھ باکس پر دیے گئے خانوں کو فل کرتے جائیں!</p>
         </div>
     </div>
 </section>
@@ -215,28 +236,28 @@ body {
 <!-- CHECKOUT SECTION WITH SELECTABLE BUNDLE CARDS -->
 <section class="checkout-section" id="order-form">
     <div class="container" style="text-align: center;">
-        <h2 style="font-size:34px; color:var(--black);">اپنا مکمل ڈیلیوری فارم پر کریں</h2>
+        <h2 style="font-size:30px; color:var(--black);">اپنا مکمل ڈیلیوری فارم پر کریں</h2>
 
-        <!-- CLICKABLE BUNDLE OFFERS -->
+        <!-- BUNDLE CARDS WITH PROPER MOBILE DIRECTION -->
         <div class="offer-banner-container">
             <div class="offer-card active" id="card-1" onclick="selectBundle(1)">
-                <div style="font-weight:bold; font-size:18px; direction: ltr;">1 x Saving Box</div>
-                <div style="color:var(--black); font-size:22px; font-weight:bold; direction: ltr;">Rs. 999</div>
+                <div class="eng-text" style="font-weight:bold; font-size:18px;">1 x Saving Box</div>
+                <div class="eng-text" style="color:var(--black); font-size:22px; font-weight:bold;">Rs. 999</div>
                 <div style="font-size:14px; color:#666;">Standard Price</div>
             </div>
 
             <div class="offer-card" id="card-2" onclick="selectBundle(2)">
-                <div class="offer-tag" style="direction: ltr;">SAVE RS. 100 🔥</div>
-                <div style="font-weight:bold; font-size:18px; direction: ltr;">2 x Saving Boxes</div>
-                <div style="color:var(--black); font-size:22px; font-weight:bold; direction: ltr;">Rs. 1,898</div>
-                <div style="font-size:14px; color:var(--red); font-weight:bold; direction: ltr;">Rs. 100 Real Discount</div>
+                <div class="offer-tag">SAVE RS. 100 🔥</div>
+                <div class="eng-text" style="font-weight:bold; font-size:18px;">2 x Saving Boxes</div>
+                <div class="eng-text" style="color:var(--black); font-size:22px; font-weight:bold;">Rs. 1,898</div>
+                <div class="eng-text" style="font-size:14px; color:var(--red); font-weight:bold;">Rs. 100 Real Discount</div>
             </div>
 
             <div class="offer-card" id="card-3" onclick="selectBundle(3)">
-                <div class="offer-tag" style="direction: ltr;">BEST VALUE - SAVE RS. 500 🎉</div>
-                <div style="font-weight:bold; font-size:18px; color:var(--red); direction: ltr;">3 x Saving Boxes</div>
-                <div style="color:var(--black); font-size:24px; font-weight:bold; direction: ltr;">Rs. 2,497</div>
-                <div style="font-size:14px; color:var(--red); font-weight:bold; direction: ltr;">Bumper Rs. 500 Discount!</div>
+                <div class="offer-tag">BEST VALUE - SAVE RS. 500 🎉</div>
+                <div class="eng-text" style="font-weight:bold; font-size:18px; color:var(--red);">3 x Saving Boxes</div>
+                <div class="eng-text" style="color:var(--black); font-size:24px; font-weight:bold;">Rs. 2,497</div>
+                <div class="eng-text" style="font-size:14px; color:var(--red); font-weight:bold;">Bumper Rs. 500 Discount!</div>
             </div>
         </div>
 
@@ -288,7 +309,6 @@ body {
                     </div>
                 </div>
 
-                <!-- ORDER SUMMARY WITH AUTO-SYNC SELECT -->
                 <div class="section-title">📦 Order Summary (آرڈر کی تفصیل)</div>
                 <div class="form-grid">
                     <div class="form-group full-width">
@@ -302,12 +322,12 @@ body {
                 </div>
 
                 <div class="order-summary">
-                    <div class="summary-row"><span>اصل قیمت:</span><span>Rs. <span id="subtotal">999</span></span></div>
-                    <div class="summary-row" style="color: var(--red); font-weight: bold;"><span>ڈسکاؤنٹ (Discount):</span><span>- Rs. <span id="discountAmt">0</span></span></div>
-                    <div class="summary-row"><span>ڈیلیوری چارجز:</span><span>Rs. 200</span></div>
+                    <div class="summary-row"><span>اصل قیمت:</span><span style="direction: ltr;">Rs. <span id="subtotal">999</span></span></div>
+                    <div class="summary-row" style="color: var(--red); font-weight: bold;"><span>ڈسکاؤنٹ (Discount):</span><span style="direction: ltr;">- Rs. <span id="discountAmt">0</span></span></div>
+                    <div class="summary-row"><span>ڈیلیوری چارجز:</span><span style="direction: ltr;">Rs. 200</span></div>
                     <hr style="margin: 10px 0; border: 0.5px solid #ccc;">
-                    <div class="summary-row" style="font-weight: bold; color: var(--red); font-size: 22px;">
-                        <span>کل رقم (Total Amount):</span><span>Rs. <span id="grandTotal">1,199</span></span>
+                    <div class="summary-row" style="font-weight: bold; color: var(--red); font-size: 20px;">
+                        <span>کل رقم (Total Amount):</span><span style="direction: ltr;">Rs. <span id="grandTotal">1,199</span></span>
                     </div>
                 </div>
 
@@ -327,6 +347,17 @@ body {
 <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwTlDM8meN-U1Qzt07xEQya-GDk0A65ak9VVBZsInk-rR2LGK0rRuHlhkIYDAsQm7QAZg/exec";
     const MY_WHATSAPP_NUMBER = "923128191800";
+
+    // Auto-play video force fix for iOS & Android
+    document.addEventListener("DOMContentLoaded", function() {
+        const video = document.querySelector(".media-container video");
+        if (video) {
+            video.muted = true;
+            video.play().catch(error => {
+                console.log("Autoplay was prevented, retrying...", error);
+            });
+        }
+    });
 
     // Card Click Function
     function selectBundle(qty) {
@@ -353,7 +384,6 @@ body {
         document.getElementById('discountAmt').innerText = discount.toLocaleString();
         document.getElementById('grandTotal').innerText = grandTotal.toLocaleString();
 
-        // Highlight selected card visually
         document.querySelectorAll('.offer-card').forEach(card => card.classList.remove('active'));
         const activeCard = document.getElementById('card-' + qty);
         if (activeCard) activeCard.classList.add('active');
