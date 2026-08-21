@@ -298,12 +298,86 @@ body {
 }
 .target-amount { font-size: 42px; font-weight: bold; color: var(--emerald); direction: ltr; text-shadow: 0 2px 5px rgba(15,81,50,0.15); }
 
-/* Reviews Section 3D Cards */
+/* Checkout Section Form Card */
+.checkout-section { background: linear-gradient(180deg, #f3ede2 0%, var(--bg-light) 100%); padding: 60px 15px; border-top: 2px solid var(--gold); }
+.form-card { 
+    background: white; 
+    max-width: 780px; 
+    margin: 25px auto 0; 
+    padding: 35px 25px; 
+    border-radius: 20px; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
+    border: 1px solid #e0d5c3; 
+    transform-style: preserve-3d;
+}
+.section-title { color: var(--emerald); border-bottom: 2px solid var(--gold); padding-bottom: 6px; margin: 25px 0 18px; font-size: 21px; font-weight: bold; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-group { margin-bottom: 15px; text-align: right; }
+.form-group.full-width { grid-column: span 2; }
+
+.form-group label { display: block; margin-bottom: 6px; font-weight: bold; font-size: 16px; color: var(--text-dark); }
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 12px; border: 1.5px solid #dcd3c3; border-radius: 10px; font-size: 15px; font-family: inherit; text-align: right; background: #fafafa;
+    transition: all 0.3s ease;
+}
+.form-group input:focus, .form-group select:focus {
+    outline: none; border-color: var(--emerald); background: #fff; box-shadow: 0 0 10px rgba(15, 81, 50, 0.15);
+}
+
+.form-group select.select-fix {
+    direction: ltr;
+    text-align: right;
+}
+.form-group select.select-fix option {
+    direction: rtl;
+    text-align: right;
+}
+
+.order-summary { background: var(--bg-light); border: 1.5px dashed var(--gold); padding: 22px; border-radius: 14px; margin: 25px 0; box-shadow: inset 0 2px 6px rgba(0,0,0,0.02); }
+.summary-row { display: flex; justify-content: space-between; font-size: 17px; margin-bottom: 10px; align-items: center; }
+
+.submit-btn {
+    width: 100%; 
+    padding: 18px; 
+    background: linear-gradient(135deg, #25D366 0%, #1eb755 100%); 
+    color: white; 
+    font-size: 23px; 
+    font-weight: bold; 
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+    border: none; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+.submit-btn:hover { 
+    transform: translateY(-3px) scale(1.01); 
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5); 
+}
+
+.trust-badge {
+    text-align: center;
+    font-size: 15px;
+    color: var(--text-dark);
+    margin-top: 16px;
+    font-weight: bold;
+    background: #eef5f0;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px dashed var(--emerald);
+}
+
+/* Reviews Section 3D Cards (Positioned at Bottom) */
 .reviews-section {
-    background: var(--bg-light);
+    background: #fdfbf7;
     padding: 70px 15px;
     color: var(--text-dark);
     text-align: center;
+    border-top: 1px solid #e0d5c3;
 }
 
 .reviews-grid {
@@ -372,80 +446,6 @@ body {
     font-weight: bold;
 }
 
-/* Checkout Section Form Card */
-.checkout-section { background: linear-gradient(180deg, #f3ede2 0%, var(--bg-light) 100%); padding: 60px 15px; border-top: 2px solid var(--gold); }
-.form-card { 
-    background: white; 
-    max-width: 780px; 
-    margin: 25px auto 0; 
-    padding: 35px 25px; 
-    border-radius: 20px; 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
-    border: 1px solid #e0d5c3; 
-    transform-style: preserve-3d;
-}
-.section-title { color: var(--emerald); border-bottom: 2px solid var(--gold); padding-bottom: 6px; margin: 25px 0 18px; font-size: 21px; font-weight: bold; }
-
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.form-group { margin-bottom: 15px; text-align: right; }
-.form-group.full-width { grid-column: span 2; }
-
-.form-group label { display: block; margin-bottom: 6px; font-weight: bold; font-size: 16px; color: var(--text-dark); }
-.form-group input, .form-group textarea, .form-group select {
-    width: 100%; padding: 12px; border: 1.5px solid #dcd3c3; border-radius: 10px; font-size: 15px; font-family: inherit; text-align: right; background: #fafafa;
-    transition: all 0.3s ease;
-}
-.form-group input:focus, .form-group select:focus {
-    outline: none; border-color: var(--emerald); background: #fff; box-shadow: 0 0 10px rgba(15, 81, 50, 0.15);
-}
-
-/* Select Direction Fix */
-.form-group select.select-fix {
-    direction: ltr;
-    text-align: right;
-}
-.form-group select.select-fix option {
-    direction: rtl;
-    text-align: right;
-}
-
-.order-summary { background: var(--bg-light); border: 1.5px dashed var(--gold); padding: 22px; border-radius: 14px; margin: 25px 0; box-shadow: inset 0 2px 6px rgba(0,0,0,0.02); }
-.summary-row { display: flex; justify-content: space-between; font-size: 17px; margin-bottom: 10px; align-items: center; }
-
-.submit-btn {
-    width: 100%; 
-    padding: 18px; 
-    background: linear-gradient(135deg, #25D366 0%, #1eb755 100%); 
-    color: white; 
-    font-size: 23px; 
-    font-weight: bold; 
-    font-family: Arial, sans-serif;
-    letter-spacing: 1px;
-    border: none; 
-    border-radius: 12px; 
-    cursor: pointer; 
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
-    position: relative;
-    overflow: hidden;
-}
-.submit-btn:hover { 
-    transform: translateY(-3px) scale(1.01); 
-    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5); 
-}
-
-.trust-badge {
-    text-align: center;
-    font-size: 15px;
-    color: var(--text-dark);
-    margin-top: 16px;
-    font-weight: bold;
-    background: #eef5f0;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px dashed var(--emerald);
-}
-
 /* Floating 3D WhatsApp Button */
 .whatsapp-float {
     position: fixed;
@@ -508,16 +508,16 @@ body {
             صرف سوچیں نہیں، آج سے ایک پاک نیت اور چھوٹی بچت کا آغاز کریں۔
         </p>
 
-        <!-- 3D GALLERY (4 BALANCED COLUMNS) -->
+        <!-- 3D GALLERY -->
         <div class="gallery-grid">
             
             <div class="gallery-item featured">
-                <span class="badge-offer">🔥 280,000 گول</span>
+                <span class="badge-offer">🔥 210,000 گول</span>
                 <div class="img-wrapper">
-                    <img src="box1.jpg.jfif" alt="Umrah Saving Box 280k Target">
+                    <img src="box1.jpg.jfif" alt="Umrah Saving Box 210k Target">
                 </div>
                 <div class="card-body">
-                    <div class="card-caption">280,000 کا سیونگ ٹارگٹ</div>
+                    <div class="card-caption">210,000 کا سیونگ ٹارگٹ</div>
                     <div class="card-subtext">پریمیم گولڈ ووڈن فنش</div>
                 </div>
             </div>
@@ -566,73 +566,13 @@ body {
         <h2 style="font-size:30px; color:var(--emerald); font-weight:bold;">🎯 بچت کا ہدف (Saving Target)</h2>
         <div class="target-box">
             <div style="font-size:20px; color:var(--text-dark);">کل بچت ہدف (Total Target):</div>
-            <div class="target-amount">Rs. 280,000</div>
+            <div class="target-amount">Rs. 210,000</div>
             <p style="font-size:16px; color:var(--text-muted); margin-top:10px;">✔ مارکر کے ساتھ باکس پر دیے گئے خانوں کو فل کرتے جائیں!</p>
         </div>
     </div>
 </section>
 
-<!-- REVIEWS SECTION -->
-<section class="reviews-section">
-    <div class="container">
-        <div class="badge">❤️ خلوص دل سے دیے گئے تاثرات</div>
-        <h2 style="font-size: clamp(24px, 4vw, 36px); color: var(--emerald); font-weight:bold;">
-            جنہوں نے اس پاک نیت کی شروعات کی...
-        </h2>
-        <p style="color: var(--text-muted); font-size: 17px; max-width: 650px; margin: 10px auto 0;">
-            یہ صرف ایک باکس نہیں، خانہ کعبہ کی حاضری کا ایک سچا جذبہ اور خواب ہے۔
-        </p>
-
-        <div class="reviews-grid">
-            <div class="review-card-3d">
-                <div class="review-header">
-                    <div class="review-avatar">ع</div>
-                    <div class="review-user-info">
-                        <h4>عائشہ تبسم</h4>
-                        <span>گوجرانوالہ</span>
-                    </div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">
-                    "ہر بار سوچتی تھی کہ عمرہ کی بچت کیسے شروع کروں، لیکن ہمیشہ پیسے ضائع ہو جاتے تھے۔ اس باکس نے مجھے ایک روحانی مقصد دے دیا۔ جب بھی اس میں پیسے ڈالتی ہوں تو دل میں ایک عجیب سا سکون ملتا ہے کہ میں اللہ کے گھر کی طرف قدم بڑھا رہی ہوں۔"
-                </p>
-                <span class="verified-badge">✓ تصدیق شدہ خریدار</span>
-            </div>
-
-            <div class="review-card-3d">
-                <div class="review-header">
-                    <div class="review-avatar">م</div>
-                    <div class="review-user-info">
-                        <h4>محمد اسلم</h4>
-                        <span>لاہور</span>
-                    </div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">
-                    "میں نے یہ باکس اپنے والدین کو تحفے میں دیا۔ جب انہوں نے اس کا ہدف دیکھا تو ان کی آنکھوں میں خوشی کے آنسو آ گئے۔ اب گھر میں ہر روز خوشی سے بچے اور بڑے اس میں بچت ڈالتے ہیں۔ اس شاندار نیت کا بہت شکریہ!"
-                </p>
-                <span class="verified-badge">✓ تصدیق شدہ خریدار</span>
-            </div>
-
-            <div class="review-card-3d">
-                <div class="review-header">
-                    <div class="review-avatar">ح</div>
-                    <div class="review-user-info">
-                        <h4>حمزہ طارق</h4>
-                        <span>راولپنڈی</span>
-                    </div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p class="review-text">
-                    "روزانہ کی فضول خرچی ختم ہو گئی ہے۔ جب سامنے لکھی بچت اور خانہ کعبہ کا خواب نظر آتا ہے تو انسان کا ارادہ پکا ہو جاتا ہے۔ کوالٹی بہت بہترین ہے اور 3 دن میں ڈیلیور ہو گیا تھا۔"
-                </p>
-                <span class="verified-badge">✓ تصدیق شدہ خریدار</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CHECKOUT SECTION WITH SELECTABLE BUNDLE CARDS -->
+<!-- CHECKOUT SECTION (FORM & BUNDLES) -->
 <section class="checkout-section" id="order-form">
     <div class="container" style="text-align: center;">
         <h2 style="font-size:32px; color:var(--emerald); font-weight:bold;">اپنا مکمل ڈیلیوری فارم پر کریں</h2>
@@ -733,6 +673,66 @@ body {
                 <button type="submit" class="submit-btn" id="submitBtn">ORDER NOW</button>
                 <div class="trust-badge">💵 Cash On Delivery | 🚚 پورے پاکستان میں باحفاظت ترسیل</div>
             </form>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS SECTION (NOW MOVED TO THE BOTTOM) -->
+<section class="reviews-section">
+    <div class="container">
+        <div class="badge">❤️ خلوص دل سے دیے گئے تاثرات</div>
+        <h2 style="font-size: clamp(24px, 4vw, 36px); color: var(--emerald); font-weight:bold;">
+            جنہوں نے اس پاک نیت کی شروعات کی...
+        </h2>
+        <p style="color: var(--text-muted); font-size: 17px; max-width: 650px; margin: 10px auto 0;">
+            یہ صرف ایک باکس نہیں، خانہ کعبہ کی حاضری کا ایک سچا جذبہ اور خواب ہے۔
+        </p>
+
+        <div class="reviews-grid">
+            <div class="review-card-3d">
+                <div class="review-header">
+                    <div class="review-avatar">ع</div>
+                    <div class="review-user-info">
+                        <h4>عائشہ تبسم</h4>
+                        <span>گوجرانوالہ</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                    "ہر بار سوچتی تھی کہ عمرہ کی بچت کیسے شروع کروں، لیکن ہمیشہ پیسے ضائع ہو جاتے تھے۔ اس باکس نے مجھے ایک روحانی مقصد دے دیا۔ جب بھی اس میں پیسے ڈالتی ہوں تو دل میں ایک عجیب سا سکون ملتا ہے کہ میں اللہ کے گھر کی طرف قدم بڑھا رہی ہوں۔"
+                </p>
+                <span class="verified-badge">✓ تصدیق شدہ خریدار</span>
+            </div>
+
+            <div class="review-card-3d">
+                <div class="review-header">
+                    <div class="review-avatar">م</div>
+                    <div class="review-user-info">
+                        <h4>محمد اسلم</h4>
+                        <span>لاہور</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                    "میں نے یہ باکس اپنے والدین کو تحفے میں دیا۔ جب انہوں نے اس کا ہدف دیکھا تو ان کی آنکھوں میں خوشی کے آنسو آ گئے۔ اب گھر میں ہر روز خوشی سے بچے اور بڑے اس میں بچت ڈالتے ہیں۔ اس شاندار نیت کا بہت شکریہ!"
+                </p>
+                <span class="verified-badge">✓ تصدیق شدہ خریدار</span>
+            </div>
+
+            <div class="review-card-3d">
+                <div class="review-header">
+                    <div class="review-avatar">ح</div>
+                    <div class="review-user-info">
+                        <h4>حمزہ طارق</h4>
+                        <span>راولپنڈی</span>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">
+                    "روزانہ کی فضول خرچی ختم ہو گئی ہے۔ جب سامنے لکھی بچت اور خانہ کعبہ کا خواب نظر آتا ہے تو انسان کا ارادہ پکا ہو جاتا ہے۔ کوالٹی بہت بہترین ہے اور 3 دن میں ڈیلیور ہو گیا تھا۔"
+                </p>
+                <span class="verified-badge">✓ تصدیق شدہ خریدار</span>
+            </div>
         </div>
     </div>
 </section>
