@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Umrah Saving Box | آپ کی مقدس سفر کی پہلی سیڑھی</title>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1393191015591722');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1393191015591722&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <!-- Jameel Noori Nastaleeq Font Load -->
 <style>
 @font-face {
@@ -682,7 +700,7 @@ body {
     <div class="container">
         <div class="badge">❤️ خلوص دل سے دیے گئے تاثرات</div>
         <h2 style="font-size: clamp(24px, 4vw, 36px); color: var(--emerald); font-weight:bold;">
-            جنہوں نے اس پاک نیت کی شروعات کی...
+            انہوں نے اس پاک نیت کی شروعات کی...
         </h2>
         <p style="color: var(--text-muted); font-size: 17px; max-width: 650px; margin: 10px auto 0;">
             یہ صرف ایک باکس نہیں، خانہ کعبہ کی حاضری کا ایک سچا جذبہ اور خواب ہے۔
@@ -831,6 +849,15 @@ body {
             discount: discount,
             totalPrice: grandTotal
         };
+
+        // Track Purchase Event in Meta Pixel
+        if (typeof fbq === 'function') {
+            fbq('track', 'Purchase', {
+                value: grandTotal,
+                currency: 'PKR',
+                num_items: qty
+            });
+        }
 
         fetch(SCRIPT_URL, {
             method: 'POST',
