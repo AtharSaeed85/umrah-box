@@ -59,14 +59,13 @@ body {
     font-size: 18px;
     text-align: right;
     overflow-x: hidden;
-    perspective: 1000px;
 }
 
-/* --- 3D ANIMATION KEYFRAMES --- */
+/* --- ANIMATION KEYFRAMES --- */
 @keyframes float3D {
-    0% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
-    50% { transform: translateY(-8px) rotateX(3deg) rotateY(-2deg); }
-    100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
 }
 
 @keyframes pulseGlow {
@@ -115,14 +114,13 @@ body {
 .gold { color: var(--gold-dark); }
 .hero-text { color: var(--text-muted); font-size:19px; max-width: 750px; margin: 0 auto 25px; line-height: 2.1; }
 
-/* 4-Column Balanced Interactive 3D Grid */
+/* 4-Column Grid */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin: 40px auto;
     max-width: 1100px;
-    perspective: 1000px;
 }
 
 .gallery-item {
@@ -133,12 +131,11 @@ body {
     position: relative;
     box-shadow: var(--card-shadow);
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s, border-color 0.5s;
-    transform-style: preserve-3d;
     cursor: pointer;
 }
 
 .gallery-item:hover {
-    transform: translateY(-12px) rotateX(8deg) rotateY(-4deg) scale(1.02);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: var(--hover-shadow);
     border-color: var(--gold);
 }
@@ -160,7 +157,6 @@ body {
     border-radius: 50px;
     z-index: 10;
     box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
-    transform: translateZ(20px);
 }
 
 .gallery-item .img-wrapper {
@@ -180,13 +176,12 @@ body {
 }
 
 .gallery-item:hover img {
-    transform: scale(1.12) rotate(1deg);
+    transform: scale(1.12);
 }
 
 .card-body {
     padding: 15px 10px;
     text-align: center;
-    transform: translateZ(30px);
 }
 
 .card-caption {
@@ -201,7 +196,7 @@ body {
     color: var(--text-muted);
 }
 
-/* 3D Interactive Button */
+/* Button */
 .cta-btn { 
     display:inline-block; 
     padding:16px 40px; 
@@ -237,14 +232,13 @@ body {
     animation: shine 4s infinite;
 }
 
-/* Bundle Offer Cards 3D Style */
+/* Bundle Offer Cards */
 .offer-banner-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     margin: 30px 0;
     text-align: center;
-    perspective: 1000px;
 }
 .offer-card {
     background: #fff;
@@ -256,10 +250,9 @@ body {
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     user-select: none;
-    transform-style: preserve-3d;
 }
 .offer-card:hover {
-    transform: translateY(-6px) rotateX(5deg);
+    transform: translateY(-6px);
     border-color: var(--gold);
     box-shadow: 0 12px 30px rgba(201,155,69,0.25);
 }
@@ -273,7 +266,7 @@ body {
     position: absolute;
     top: -14px;
     left: 50%;
-    transform: translateX(-50%) translateZ(10px);
+    transform: translateX(-50%);
     background: linear-gradient(45deg, #d9534f, #c9302c);
     color: white;
     padding: 3px 14px;
@@ -293,7 +286,7 @@ body {
     unicode-bidi: embed;
 }
 
-/* Target Section 3D Box */
+/* Target Section Box */
 .hype-section { 
     background: linear-gradient(180deg, #f3ede2 0%, #e8dfcf 100%); 
     color: var(--text-dark); 
@@ -310,11 +303,10 @@ body {
     max-width: 700px; 
     margin: 25px auto; 
     box-shadow: 0 15px 35px rgba(0,0,0,0.06); 
-    transform-style: preserve-3d;
     transition: transform 0.4s ease;
 }
 .target-box:hover {
-    transform: translateY(-5px) rotateX(3deg);
+    transform: translateY(-5px);
 }
 .target-amount { font-size: 42px; font-weight: bold; color: var(--emerald); direction: ltr; text-shadow: 0 2px 5px rgba(15,81,50,0.15); }
 
@@ -328,7 +320,6 @@ body {
     border-radius: 20px; 
     box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
     border: 1px solid #e0d5c3; 
-    transform-style: preserve-3d;
 }
 .section-title { color: var(--emerald); border-bottom: 2px solid var(--gold); padding-bottom: 6px; margin: 25px 0 18px; font-size: 21px; font-weight: bold; }
 
@@ -391,7 +382,7 @@ body {
     border: 1px dashed var(--emerald);
 }
 
-/* Reviews Section 3D Cards */
+/* Reviews Section Cards */
 .reviews-section {
     background: #fdfbf7;
     padding: 70px 15px;
@@ -405,7 +396,6 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
-    perspective: 1000px;
 }
 
 .review-card-3d {
@@ -417,11 +407,10 @@ body {
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform-style: preserve-3d;
 }
 
 .review-card-3d:hover {
-    transform: translateY(-8px) rotateX(6deg) rotateY(-3deg);
+    transform: translateY(-8px);
     border-color: var(--gold);
     box-shadow: 0 20px 40px rgba(201, 155, 69, 0.22);
 }
@@ -466,27 +455,29 @@ body {
     font-weight: bold;
 }
 
-/* Floating 3D WhatsApp Button */
-.whatsapp-float {
+/* CLEAN ELEGANT FLOATING WHATSAPP ICON */
+.wa-float-btn {
     position: fixed;
-    width: 60px;
-    height: 60px;
     bottom: 25px;
     right: 25px;
-    background: linear-gradient(135deg, #25d366, #128c7e);
+    width: 58px;
+    height: 58px;
+    background: #25D366;
     color: #FFF;
     border-radius: 50px;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: float3D 3s ease-in-out infinite;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
 }
-.whatsapp-float:hover {
-    transform: scale(1.15) rotate(5deg);
+
+.wa-float-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
 }
 
 /* Responsive Styles */
@@ -506,10 +497,19 @@ body {
     
     .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .gallery-item .img-wrapper { height: 155px; }
+    .wa-float-btn { width: 50px; height: 50px; bottom: 20px; right: 20px; }
 }
 </style>
 </head>
 <body>
+
+<!-- CLEAN FLOATING WHATSAPP ICON (BOTTOM RIGHT CORNER) -->
+<a href="https://wa.me/923128191800?text=As%20Salam%20Alaikum%20mujh%20ko%20Umrah%20Saving%20Box%20ke%20bare%20me%20information%20chahiye" 
+   class="wa-float-btn" 
+   target="_blank"
+   title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="34" height="34">
+</a>
 
 <!-- DYNAMIC LIVE HYPE BAR -->
 <div class="hype-bar">
@@ -528,7 +528,7 @@ body {
             صرف سوچیں نہیں، آج سے ایک پاک نیت اور چھوٹی بچت کا آغاز کریں۔
         </p>
 
-        <!-- 3D GALLERY -->
+        <!-- GALLERY -->
         <div class="gallery-grid">
             
             <div class="gallery-item featured">
@@ -757,13 +757,6 @@ body {
     </div>
 </section>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/923128191800?text=As%20Salam%20Alaikum%20mujh%20ko%20Umrah%20Saving%20Box%20ke%20bare%20me%20information%20chahiye" 
-   class="whatsapp-float" 
-   target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="38" height="38">
-</a>
-
 <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwTlDM8meN-U1Qzt07xEQya-GDk0A65ak9VVBZsInk-rR2LGK0rRuHlhkIYDAsQm7QAZg/exec";
     const MY_WHATSAPP_NUMBER = "923128191800";
@@ -825,7 +818,7 @@ body {
         if (activeCard) activeCard.classList.add('active');
     }
 
-    // Checkout Form Handler (TRACKS PURCHASE EVENT ON ORDER NOW CLICK)
+    // Checkout Form Handler
     document.getElementById('checkoutForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
