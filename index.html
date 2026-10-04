@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Umrah Saving Box | آپ کی مقدس سفر کی پہلی سیڑھی</title>
 
+<!-- META PIXEL BASE CODE -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1393191015591722');
+fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=1393191015591722&ev=PageView&noscript=1"/>
+</noscript>
+<!-- END META PIXEL CODE -->
+
 <!-- Jameel Noori Nastaleeq Font Load -->
 <style>
 @font-face {
@@ -371,7 +391,7 @@ body {
     border: 1px dashed var(--emerald);
 }
 
-/* Reviews Section 3D Cards (Positioned at Bottom) */
+/* Reviews Section 3D Cards */
 .reviews-section {
     background: #fdfbf7;
     padding: 70px 15px;
@@ -677,7 +697,7 @@ body {
     </div>
 </section>
 
-<!-- REVIEWS SECTION (NOW MOVED TO THE BOTTOM) -->
+<!-- REVIEWS SECTION -->
 <section class="reviews-section">
     <div class="container">
         <div class="badge">❤️ خلوص دل سے دیے گئے تاثرات</div>
@@ -805,7 +825,7 @@ body {
         if (activeCard) activeCard.classList.add('active');
     }
 
-    // Checkout Form Handler
+    // Checkout Form Handler (TRACKS PURCHASE EVENT ON ORDER NOW CLICK)
     document.getElementById('checkoutForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -832,6 +852,17 @@ body {
             totalPrice: grandTotal
         };
 
+        // META PIXEL PURCHASE TRACKING (FIRE EVENT BEFORE GOOGLE SHEET/WHATSAPP)
+        if (typeof fbq === 'function') {
+            fbq('track', 'Purchase', {
+                value: grandTotal,
+                currency: 'PKR',
+                content_name: 'Umrah Saving Box',
+                content_type: 'product',
+                num_items: formData.quantity
+            });
+        }
+
         fetch(SCRIPT_URL, {
             method: 'POST',
             body: JSON.stringify(formData)
@@ -852,7 +883,10 @@ body {
             waMessage += `Payment: Cash on Delivery`;
 
             const waUrl = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
-            window.location.href = waUrl;
+            
+            setTimeout(function() {
+                window.location.href = waUrl;
+            }, 400);
         })
         .catch(err => {
             alert("Order Submit Karne Me Masla Aaya. Dobara Koshish Karein.");
